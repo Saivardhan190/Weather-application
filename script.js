@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (hour >= 6 && hour < 18) {
             document.body.classList.add('day');
             document.body.classList.remove('night');
-            skyObject.src = './sun-removebg-preview.png'; // Ensure image exists
+            skyObject.src = '/images/sun-removebg-preview.png'; // Ensure image exists
         } else {
             document.body.classList.add('night');
             document.body.classList.remove('day');
-            skyObject.src = './Moon1.png'; // Ensure image exists
+            skyObject.src = '/images/Moon1.png'; // Ensure image exists
         }
     }
 
