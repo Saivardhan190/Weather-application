@@ -1,0 +1,221 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Base styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    transition: all 1s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background transitions */
+.day {
+    background: linear-gradient(to bottom, #87CEEB, #E0F7FA);
+}
+
+.night {
+    background: linear-gradient(to bottom, #0F2027, #203A43, #2C5364);
+    color: #FFFFFF;
+}
+
+/* Sun/Moon */
+#skyObject {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    transition: all 1s ease-in-out;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7));
+    z-index: 1;
+}
+
+/* Weather container */
+.weather-container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    backdrop-filter: blur(8px);
+    position: relative;
+    z-index: 2;
+    margin-top: 50px;
+    width: 90%;
+    max-width: 400px;
+    transition: all 0.3s ease;
+}
+
+/* Input field */
+input {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 15px;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.night input {
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.3);
+}
+
+/* Button styling */
+button {
+    background: #4285F4;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background: #3367D6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Weather icon */
+#weatherIcon {
+    width: 60px;
+    height: 60px;
+    margin: 10px 0;
+    transition: all 0.5s ease;
+}
+
+/* CSS-only Trees */
+.trees {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.tree {
+    position: relative;
+    width: 60px;
+    height: 100px;
+    margin: 0 5px;
+    animation: sway 5s infinite alternate ease-in-out;
+}
+
+/* Different animation delays */
+.tree:nth-child(2n) {
+    animation-delay: 1s;
+}
+.tree:nth-child(3n) {
+    animation-delay: 1.5s;
+}
+
+/* Tree trunk */
+.tree-trunk {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 40px;
+    background: #5E2C04;
+    z-index: 2;
+    border-radius: 2px;
+}
+
+/* Tree foliage */
+.tree-foliage {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid #2A7F19;
+    z-index: 1;
+    border-radius: 50% 50% 0 0;
+}
+
+/* Tree variations */
+.tree:nth-child(2) {
+    transform: scale(0.8);
+}
+.tree:nth-child(3) {
+    transform: scale(1.2);
+}
+.tree:nth-child(4) {
+    transform: scale(0.9);
+}
+.tree:nth-child(5) {
+    transform: scale(1.1);
+}
+
+/* Night mode trees */
+.night .tree-foliage {
+    border-bottom-color: #1A4D12;
+    filter: brightness(0.7);
+}
+
+/* Swaying animation */
+@keyframes sway {
+    0% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(2deg);
+    }
+}
+
+/* Ground */
+.ground {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to right, #5E2C04, #8B4513, #5E2C04);
+    z-index: 1;
+}
+
+/* Typography */
+h1 {
+    margin: 0 0 20px;
+    font-weight: 600;
+    color: inherit;
+}
+
+#weatherData {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
