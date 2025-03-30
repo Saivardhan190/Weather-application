@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             document.body.classList.add('night');
             document.body.classList.remove('day');
-            skyObject.src = './Moon1.jpeg'; // Ensure image exists
+            skyObject.src = './Moon1.png'; // Ensure image exists
         }
     }
 
